@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+{% if 'workout' %}
+<p> {{workout}}</p>
+  <p><strong>Name:</strong> <a>{{ workout.name }}</a></p>
+  <p><strong>Date:</strong> {{ workout.date }}</p>
+  <p><strong>Track:</strong> {{ workout.track }}</p> 
+{% else %}
+  <p>No workout found.</p>
+{% endif %}  
+
+{% endblock %}

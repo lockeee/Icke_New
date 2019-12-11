@@ -1,0 +1,4 @@
+Django~=2.2.8
+google-api-python-client==1.4.1
+oauth2client==2.2.0
+django-bootstrap-modal-forms==1.5.0

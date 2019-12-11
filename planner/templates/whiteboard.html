@@ -1,0 +1,24 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Whiteboard</h1>
+   <input type="date" value=date>   <select name="Track">
+                                      <option value="WOD">WOD</option>
+                                      <option value="Hyrox">Hyrox</option>
+                                      <option value="Elite">Elite</option>
+</select> 
+
+  {% if 'whiteboard_list' and whiteboard_list.count != 0 %} {{whiteboard_list.count}}
+  <ul>
+    {% for training_instance in whiteboard_list %}
+      <div style="width:400px;height:200px;border:3px solid white;margin-top: 10px;color:black">
+        <img src= ../{{training_instance.athlete.headshot}} />
+        <a href="{{ training_instance.get_absolute_url }}" >{{ training_instance.athlete }}</a> ({{training_instance.date}})
+      </div>
+       
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>No entries logged.</p>
+  {% endif %}       
+{% endblock %}
